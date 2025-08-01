@@ -16,7 +16,7 @@ type Step2Form = FormGroup<{
   selector: 'app-step-2',
   imports: [MatSelectModule, MatInputModule, MatFormFieldModule, MatButtonModule, ReactiveFormsModule],
   templateUrl: './step-2.component.html',
-  styleUrl: './step-2.component.scss'
+  styleUrls: ['./step-2.component.scss', '../step-1/step-1.component.scss']
 })
 export class Step2Component {
 

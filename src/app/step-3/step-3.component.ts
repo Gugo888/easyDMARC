@@ -15,7 +15,7 @@ type Step3Form = FormGroup<{
   selector: 'app-step-3',
   imports: [MatInputModule, MatFormFieldModule, MatButtonModule, ReactiveFormsModule],
   templateUrl: './step-3.component.html',
-  styleUrl: './step-3.component.scss'
+  styleUrls: ['./step-3.component.scss', '../step-1/step-1.component.scss']
 })
 export class Step3Component {
 

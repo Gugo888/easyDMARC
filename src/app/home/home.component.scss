@@ -1,0 +1,16 @@
+.registration-result {
+   display: flex;
+   justify-content: center;
+   margin-top: 2rem;
+}
+
+.registration-result-content {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+
+   div {
+      font-size: large;
+      color: #197090;
+   }
+}

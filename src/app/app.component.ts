@@ -20,8 +20,16 @@ export class AppComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.stepIndex = this.routes.indexOf(this.route.snapshot.firstChild?.firstChild?.url[0].path ?? 'step1');
-
+      const path = this.route.snapshot.firstChild?.firstChild?.url[0]?.path;
+      if (this.routes.includes(path ?? '')) {
+        this.stepIndex = this.routes.indexOf(path!);
+      }
+      else if (path === 'home') {
+        this.stepIndex = this.routes.length - 1;
+      }
+      else {
+        this.stepIndex = 0;
+      }
     });
   }
 }
