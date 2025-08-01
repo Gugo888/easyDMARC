@@ -1,7 +1,15 @@
 import { inject } from '@angular/core';
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { RegistrationData } from '../registration-data.service';
 
 export const homeGuard: CanActivateFn = () => {
-  return inject(RegistrationData).data.step3 !== null;
+  const regData = inject(RegistrationData);
+  const router = inject(Router);
+
+  if (regData.data.step3 !== null) {
+    return true;
+  }
+
+  router.navigate(['/step1']);
+  return false;
 };
