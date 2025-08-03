@@ -1,0 +1,15 @@
+<mat-stepper linear [selectedIndex]="currentStepIndex()" (selectedIndexChange)="toStep($event)">
+   <mat-step [completed]="registration.stepValidity().step1">
+      <ng-template matStepLabel>Account Info</ng-template>
+   </mat-step>
+
+   <mat-step [completed]="registration.stepValidity().step2">
+      <ng-template matStepLabel>Professional Info</ng-template>
+   </mat-step>
+
+   <mat-step [completed]="registration.stepValidity().step3">
+      <ng-template matStepLabel>About You</ng-template>
+   </mat-step>
+</mat-stepper>
+
+<router-outlet></router-outlet>

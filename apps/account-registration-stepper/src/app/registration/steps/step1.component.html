@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+   <mat-form-field>
+      <input matInput type="email" formControlName="email" placeholder="Email">
+      @if (form.controls.email.invalid) {
+      <mat-error>Valid email required</mat-error>
+      }
+   </mat-form-field>
+
+   <mat-form-field>
+      <input matInput type="password" formControlName="password" placeholder="Password">
+      @if (form.controls.password.invalid) {
+      <mat-error>Password required</mat-error>
+      }
+   </mat-form-field>
+
+   <mat-form-field>
+      <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+   </mat-form-field>
+
+   @if (form.hasError('mismatch')) {
+   <mat-error>Passwords must match</mat-error>
+   }
+
+   <button mat-raised-button color="primary" type="button" (click)="onSubmit()" [disabled]="form.invalid">
+      Continue
+   </button>
+</form>

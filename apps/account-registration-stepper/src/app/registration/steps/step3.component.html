@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+   <mat-form-field class="full-width">
+      <textarea matInput formControlName="aboutUs" placeholder="Tell us about yourself" rows="5"></textarea>
+
+      @if (form.controls.aboutUs.invalid) {
+      <mat-error>This field is required</mat-error>
+      }
+   </mat-form-field>
+
+   <button mat-raised-button color="primary" type="button" (click)="onSubmit()" [disabled]="form.invalid">
+      Complete Registration
+   </button>
+</form>
